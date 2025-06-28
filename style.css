@@ -6,13 +6,13 @@
 
 body{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #e0d8c0;
     color: #333;
 }
 
 a {
     text-decoration: none;
-    color: #0077cc;
+    color: #4c643b;
 }
 
 a:hover{
@@ -32,7 +32,7 @@ a:hover{
 
 .menu{
     grid-area: menu;
-    background: #222;
+    background: #4c643b;
     padding: 10px;
     display: flex;
     gap: 10px;
@@ -40,7 +40,7 @@ a:hover{
 }
 
 .menu button{
-    background: #0077cc;
+    background: #4c643b;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -50,7 +50,7 @@ a:hover{
 }
 
 .menu button:hover{
-    background: #005fa3;
+    background: #2e4b30;
     transform: scale(1.05);
 }
 
@@ -60,8 +60,8 @@ a:hover{
 
 .estrutura{
     grid-area: header;
-    background: #0077cc;
-    color: white;
+    background: #4c643b;
+    color: #ccc1a8;
     text-align: center;
     padding: 20px;
 
@@ -76,7 +76,7 @@ a:hover{
 }
 
 .noticia{
-    background: white;
+    background: #f5efe1;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
@@ -84,6 +84,8 @@ a:hover{
     transform: translateY(20px);
     animation: subir 0.5s ease forwards;
 }
+
+
 
 @keyframes subir{
     to {
@@ -133,8 +135,75 @@ a:hover{
 
 
 /*Noticia individual*/
-.noticia-container{
+
+.n-container{
+    display: grid;
+    grid-template-areas:
+        'menu menu menu'
+        'header header header'
+        'noticia noticia noticia'
+        'footer footer footer';
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+.n-container{
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 20px;
+    padding: 20px;
+}
+
+.conteudo{
+    background: #ccc1a8;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.publicidade{
+    background: #ccc1a8;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+
+/*bloco de citação*/
+.quote-container {
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+blockquote {
+  background-color: #4c643b;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  border-left: none;
+  color: #222;
+}
+
+.quote-line {
+  height: 1px;
+  background-color: #ccc;
+  position: relative;
+  margin: 10px 0;
+}
+
+.quote-line::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #2e4b30;
+  position: absolute;
+  left: 50%;
+  top: -1.5px;
+  transform: translateX(-50%); /*altera o eixo X(horizontal)*/
+}
+
+.quote-line.bottom::after {
+  top: auto;
+  bottom: -1.5px;
 }
